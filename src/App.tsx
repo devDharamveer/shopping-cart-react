@@ -2,7 +2,12 @@ import { Routes, Route } from "react-router-dom";
 import Dashboard from "./modules/dashboard/Dashboard";
 import FoodDetails from "./modules/foodDetails/FoodDetails";
 import Cart from "./modules/cart/Cart";
+import ReactGA from 'react-ga';
 import "bootstrap/dist/css/bootstrap.min.css";
+
+const TRACKING_ID = "G-J7NLMZ94BL";
+ReactGA.initialize(TRACKING_ID);
+
 
 function App() {
   return (

@@ -1,17 +1,29 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FoodItems } from "../../appInterface";
 import { DataContext } from "../../context/DataProvider";
 import Footer from "../common/Footer/Footer";
 import Header from "../common/Header/Header";
+import ReactGA from 'react-ga';
 import "./Dashboard.css";
 
 function Dashboard() {
   const { topRated, allCategories, dishesNearYou } = useContext(DataContext);
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname);
+  }, []);
+
+
 
   const navigate = useNavigate();
 
   const foodDetails = (item: FoodItems) => {
+    ReactGA.event({
+      category: item.name,
+      action: "test action",
+      label: "test label",
+      value: item.price,
+ })
     navigate("/food-details", { state: item });
   };
 
