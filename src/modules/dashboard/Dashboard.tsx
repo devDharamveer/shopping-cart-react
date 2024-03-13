@@ -4,7 +4,7 @@ import { FoodItems } from "../../appInterface";
 import { DataContext } from "../../context/DataProvider";
 import Footer from "../common/Footer/Footer";
 import Header from "../common/Header/Header";
-
+import ReactGA from "react-ga4";
 import "./Dashboard.css";
 
 function Dashboard() {
@@ -13,6 +13,14 @@ function Dashboard() {
   const navigate = useNavigate();
 
   const foodDetails = (item: FoodItems) => {
+    ReactGA.event({
+      category: "your category",
+      action: "your action",
+      label: "your label", // optional
+      value: 99, // optional, must be a number
+      nonInteraction: true, // optional, true/false
+      transport: "xhr", // optional, beacon/xhr/image
+    });
     navigate("/food-details", { state: item });
   };
 
