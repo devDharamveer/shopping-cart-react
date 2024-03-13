@@ -1,4 +1,4 @@
-import { useContext,useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FoodItems } from "../../appInterface";
 import { DataContext } from "../../context/DataProvider";
@@ -12,14 +12,16 @@ function Dashboard() {
 
   const navigate = useNavigate();
 
-  const foodDetails = (item: FoodItems) => {
+  useEffect(() => {
+    // Initialize ReactGA with your Measurement ID
+    ReactGA.initialize("G-J7NLMZ94BL");
+  }, []);
+
+  const foodDetails = (category: string, item: FoodItems) => {
     ReactGA.event({
-      category: "test",
-      action: "your action",
-      label: "your label", // optional
-      value: 99, // optional, must be a number
-      nonInteraction: true, // optional, true/false
-      transport: "xhr", // optional, beacon/xhr/image
+      category: "buttonClicks",
+      action: category,
+      label: item.name,
     });
     navigate("/food-details", { state: item });
   };
@@ -35,7 +37,7 @@ function Dashboard() {
               <div
                 key={idx}
                 className="col-md-4 pointer"
-                onClick={() => foodDetails(items)}
+                onClick={() => foodDetails("topRated", items)}
               >
                 <img
                   src={items.url}
@@ -54,7 +56,7 @@ function Dashboard() {
               <div
                 key={idx}
                 className="col-md-4 pointer"
-                onClick={() => foodDetails(items)}
+                onClick={() => foodDetails("allCategories", items)}
               >
                 <img
                   src={items.url}
@@ -73,7 +75,7 @@ function Dashboard() {
               <div
                 key={idx}
                 className="col-md-4 pointer"
-                onClick={() => foodDetails(items)}
+                onClick={() => foodDetails("dishesNearYou", items)}
               >
                 <img
                   src={items.url}
