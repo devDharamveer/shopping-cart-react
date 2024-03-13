@@ -14,7 +14,7 @@ function Dashboard() {
 
   const foodDetails = (item: FoodItems) => {
     ReactGA.event({
-      category: "your category",
+      category: "test",
       action: "your action",
       label: "your label", // optional
       value: 99, // optional, must be a number
