@@ -2,12 +2,11 @@ import { Routes, Route } from "react-router-dom";
 import Dashboard from "./modules/dashboard/Dashboard";
 import FoodDetails from "./modules/foodDetails/FoodDetails";
 import Cart from "./modules/cart/Cart";
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga4";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const TRACKING_ID = "430091757";
-ReactGA.initialize(TRACKING_ID);
-
+ReactGA.initialize("G-J7NLMZ94BL");
+ReactGA.send({ hitType: "pageview", page: "window.location", title: "Custom Title" });
 
 function App() {
   return (
