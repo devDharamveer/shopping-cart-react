@@ -6,7 +6,10 @@ import ReactGA from "react-ga4";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 ReactGA.initialize("G-J7NLMZ94BL");
-ReactGA.send({ hitType: "pageview", page: "window.location", title: "Custom Title" });
+ReactGA.send({
+  hitType: "pageview",
+  page: window.location.pathname,
+});
 
 function App() {
   return (

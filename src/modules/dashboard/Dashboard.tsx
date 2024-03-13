@@ -4,13 +4,11 @@ import { FoodItems } from "../../appInterface";
 import { DataContext } from "../../context/DataProvider";
 import Footer from "../common/Footer/Footer";
 import Header from "../common/Header/Header";
-import ReactGA from "react-ga4";
+
 import "./Dashboard.css";
 
 function Dashboard() {
   const { topRated, allCategories, dishesNearYou } = useContext(DataContext);
-  ReactGA.send({ hitType: "pageview", page: "window.location", title: "Custom Title" });
-
 
   const navigate = useNavigate();
 
