@@ -1,5 +1,4 @@
-import { Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import Dashboard from "./modules/dashboard/Dashboard";
 import FoodDetails from "./modules/foodDetails/FoodDetails";
 import Cart from "./modules/cart/Cart";
@@ -7,27 +6,20 @@ import ReactGA from "react-ga4";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 ReactGA.initialize("G-J7NLMZ94BL");
+ReactGA.send({
+  hitType: "pageview",
+  page: window.location.pathname,
+});
 
 function App() {
-  const location = useLocation();
-
-  useEffect(() => {
-    const userEmail = getUserEmail();
-    if (userEmail) {
-      ReactGA.send({
-        hitType: "event",
-        category: "user",
-        action: "login",
-        label: userEmail,
-      });
-    }
-  }, [location]);
-
-  const getUserEmail = () => {
-    // Implement your logic to retrieve the user's email here
-    // For demonstration purposes, let's assume the user's email is stored in localStorage
-    return localStorage.getItem("userEmail");
-  };
+  // Sending the custom event when the component mounts
+  ReactGA.event({
+    category: 'button',
+    action: 'successful_sign_in',
+    label: 'label',
+  }, {
+    email: 'this.authUserEmail' // Replace 'this.authUserEmail' with the actual user's email
+  });
 
   return (
     <div className="App">
