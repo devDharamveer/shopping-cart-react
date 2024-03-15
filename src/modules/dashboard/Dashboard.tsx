@@ -14,7 +14,7 @@ function Dashboard() {
 
   useEffect(() => {
     // Initialize ReactGA with your Measurement ID
-    ReactGA.initialize("G-J7NLMZ94BL");
+    ReactGA.initialize("G-J7NLMZ94BL", { testMode: true });
   }, []);
 
   const foodDetails = (category: string, item: FoodItems) => {
