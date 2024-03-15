@@ -18,7 +18,7 @@ function App() {
   // Sending the custom event when the component mounts
   ReactGA.event({
     category: 'button',
-    action: 'successful_sign_in',
+    action: 'successful_sign_in-dharam@gmail.com',
     label: 'dharamveersinghkhera@gmail.com',
     value: 99,
 
