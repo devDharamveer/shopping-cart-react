@@ -5,7 +5,7 @@ import Cart from "./modules/cart/Cart";
 import ReactGA from "react-ga4";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-ReactGA.initialize("G-J7NLMZ94BL");
+ReactGA.initialize("G-J7NLMZ94BL", { testMode: true });
 ReactGA.send({
   hitType: "pageview",
   page: window.location.pathname,
