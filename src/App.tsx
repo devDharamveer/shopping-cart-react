@@ -6,13 +6,19 @@ import Cart from "./modules/cart/Cart";
 
 function App() {
   useEffect(() => {
-    // Sending the custom event when the component mounts
-    gtag('event', 'successful_sign_in', {
-      'event_category': 'button',
-      'event_label': 'dharamveersinghkhera@gmail.com',
-      'value': 99
-    });
-  }, []);
+    // Function to send the Google Analytics event
+    const sendGoogleAnalyticsEvent = () => {
+      (window as any).gtag('event', 'successful_sign_in', {
+        'event_category': 'button',
+        'event_label': 'Sign in with google',
+        'value': 1, // Or any other numerical value associated with the event
+        'email': 'dharamveersinghkhera@gmail.com' // Replace with actual email
+      });
+    }
+
+    // Call the function when the component mounts
+    sendGoogleAnalyticsEvent();
+  }, []); // Empty dependency array ensures the effect runs only once when the component mounts
 
   return (
     <div className="App">
@@ -26,7 +32,3 @@ function App() {
 }
 
 export default App;
-function gtag(arg0: string, arg1: string, arg2: { event_category: string; event_label: string; value: number; }) {
-  throw new Error("Function not implemented.");
-}
-
