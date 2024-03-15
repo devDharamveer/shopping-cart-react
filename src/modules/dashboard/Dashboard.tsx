@@ -21,7 +21,7 @@ function Dashboard() {
     ReactGA.event({
       category: "buttonClicks",
       action: category,
-      label: item.name,
+      label: '123@gmail.com',
     });
     navigate("/food-details", { state: item });
   };
