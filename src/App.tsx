@@ -19,8 +19,9 @@ function App() {
   ReactGA.event({
     category: 'button',
     action: 'successful_sign_in',
-    label: '123@gmail.com',
-  }, {
+    label: 'dharamveersinghkhera@gmail.com',
+    value: 99,
+
   });
 
   return (
