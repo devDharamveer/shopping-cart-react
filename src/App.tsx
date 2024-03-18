@@ -15,7 +15,6 @@ function App() {
         'email': 'dharamveersinghkhera@gmail.com', // Replace with actual email
         'customDimension': { 'dimension1': 'dharamveersinghkhera@gmail.com' } // Replace dimension1 with the index of your custom dimension
       });
-      
     }
 
     // Call the function when the component mounts
