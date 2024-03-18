@@ -12,8 +12,10 @@ function App() {
         'event_category': 'button',
         'event_label': 'Sign in with google',
         'value': 1, // Or any other numerical value associated with the event
-        'email': 'dharamveersinghkhera@gmail.com' // Replace with actual email
+        'email': 'dharamveersinghkhera@gmail.com', // Replace with actual email
+        'customDimension': { 'dimension1': 'dharamveersinghkhera@gmail.com' } // Replace dimension1 with the index of your custom dimension
       });
+      
     }
 
     // Call the function when the component mounts
