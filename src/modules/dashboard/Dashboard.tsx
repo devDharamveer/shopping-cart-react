@@ -4,7 +4,6 @@ import { FoodItems } from "../../appInterface";
 import { DataContext } from "../../context/DataProvider";
 import Footer from "../common/Footer/Footer";
 import Header from "../common/Header/Header";
-import ReactGA from "react-ga4";
 import "./Dashboard.css";
 
 // Declare gtag function globally
